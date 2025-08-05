@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+<style>
+body {
+        background-color: #f0f0f0;
+        font-family: sans-serif;
+    }
+    /* 여러 비디오를 감싸는 컨테이너 */
+    .videos-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* 비디오 간의 간격 */
+        padding: 20px;
+    }
+
+    /* 플레이어를 감싸는 컨테이너 */
+    .player-container {
+        position: relative;
+        width: 100%; /* 화면 너비의 100%를 사용 */
+        max-width: 854px; /* 무한정 커지는 것을 방지하는 최대 너비 */
+        margin: 20px auto; /* 중앙 정렬 */
+        height: 0;
+    padding-top: 56.25%; /* 16:9 비율 (9 ÷ 16 = 0.5625) */
+    background-color: #fffff;
+    overflow: hidden;
+    }
+    .player-container .player,
+    .player-container .end-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+     /* 동영상이 끝난 후 나타날 화면 */
+    .end-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 1); /* R,G,B,투명도 */
+        color: white;
+        display: none; /* 처음에는 숨겨둠 */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        font-size: 1px;
+    }
+    .end-screen button {
+        border: none;
+        padding: 0px 0px;
+        background-color: rgba(0,0,0,0);
+        font-size: 1px;
+        cursor: pointer;
+        margin-top: 30px;
+    }
+</style>
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            </div>
+        </header>
+           <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- 포폴 표 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/1.png" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Personal work</div>
+                                <div class="portfolio-caption-subheading text-muted">3D Animation</div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 포폴 표 2-->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/2.png" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Match 3 puzzle</div>
+                                <div class="portfolio-caption-subheading text-muted">Spain 2D animation, VFX</div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 포폴 표 3-->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/3.png" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Random Dice : Wars</div>
+                                <div class="portfolio-caption-subheading text-muted">3D Animation</div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 포폴 표 4-->
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/4.png" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Crusaders Quest</div>
+                                <div class="portfolio-caption-subheading text-muted">2.5D Animation, Spin 2D, VFX</div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 포폴 표 5시작-->
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/5.png" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Graphic design</div>
+                                <div class="portfolio-caption-subheading text-muted">Drawing, design</div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 포폴 표 5끝-->
+                </div>
+            </div>
+        </section>
+        <!-- 경력-->
+        <section class="page-section" id="Experience">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Experience</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/ex/4.png" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h5>Jan 2024 - Dec 2024</h5>
+                                <h3 class="subheading">Commander Quest</h3>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Responsible for 3D character animations.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/ex/3.png" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h5>Jan 2023 - Dec 2023</h5>
+                                <h3 class="subheading">Match 3 puzzle</h3>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Responsible for 2D character animations, interaction animations for puzzle blocks, and VFX.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/ex/2.png" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h5>Aug 2021 - Jan 2023</h5>
+                                <h3 class="subheading">Random Dice : Wars</h3>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Responsible for 3D character animations, VFX, and Graphic design.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/ex/1.png" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h5>Sep 2016 - Aug 2021</h5>
+                                <h3 class="subheading">Crusaders Quest</h3>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Responsible for 2.5D character animations, and VFX</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                ▲
+                                <br />
+                                ▲
+                                <br />
+                                ▲
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 컨택-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-heading text-uppercase">Phone</h3>
+                    <h4 class="section-subheading">+82 ) 10-8614-7989</h4>
+                    <br>
+                    <h3 class="section-heading text-uppercase">E-Mail</h3>
+                    <h4 class="section-subheading">ovxcv@naver.com</h4>
+
+                </div>
+              
+        </section>
+        <!-- 꼬리말-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Website 2025</div>
+                  <!-- 
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                  -->
+                </div>
+            </div>
+        </footer>
+        <!-- 포폴팝업-->
+        <!-- 포폴 개인 팝업-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Personal work</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                       <!-- 동영상부분시작-->
+<div class="videos-wrapper">
+        <div class="player-container" data-video-id="yCM0CYbYGxc">
+            <div class="player"></div>
+            <div class="end-screen">
+                <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+            </div>
+        </div>
+
+        <div class="player-container" data-video-id="93QusLhQ7SE">
+            <div class="player"></div>
+            <div class="end-screen">
+                <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+            </div>
+        </div>
+
+        <div class="player-container" data-video-id="HEUsC1LJKs8">
+            <div class="player"></div>
+            <div class="end-screen">
+                <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+            </div>
+        </div>
+    </div>
+                       <!-- 동영상부분끝-->
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 포폴퍼즐팝업-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Match 3 puzzle</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                       <!-- 동영상부분시작-->
+                                    <div class="videos-wrapper">
+                                            <div class="player-container" data-video-id="cTkHy1fqU3Y">
+                                                <div class="player"></div>
+                                                <div class="end-screen">
+                                                    <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+                                                </div>
+                                            </div>
+                                    </div>
+                       <!-- 동영상부분끝-->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-1.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-2.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-3.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-4.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-5.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-6.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-7.gif" alt="..." />
+                            </a>
+                    </div>
+                    <div class="col-lg-6">
+                            <a>
+                                <img class="img-fluid" src="assets/img/portfolio/pz-8.gif" alt="..." />
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 포폴랜덤다이스워즈팝업-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Random Dice : Wars</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                       <!-- 동영상부분시작-->
+                                    <div class="videos-wrapper">
+                                            <div class="player-container" data-video-id="4U3DyaiP6_I">
+                                                <div class="player"></div>
+                                                <div class="end-screen">
+                                                    <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+                                                </div>
+                                           </div>
+                                    </div>
+                       <!-- 동영상부분끝-->
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 포폴크루세이더퀘스트크퀘팝업-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Crusaders Quest</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                       <!-- 동영상부분시작-->
+                                    <div class="videos-wrapper">
+                                            <div class="player-container" data-video-id="gYoaGl325rM">
+                                                <div class="player"></div>
+                                                <div class="end-screen">
+                                                    <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+                                                </div>
+                                           </div>
+                                    </div>
+                       <!-- 동영상부분끝-->
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff1.gif" alt="..." />
+                                                                </div>
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff2.gif" alt="..." />
+                                                                </div>
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff3.gif" alt="..." />
+                                                                </div>
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff4.gif" alt="..." />
+                                                                </div>
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff5.gif" alt="..." />
+                                                                </div>
+                                                                <div class="col-lg-4 col-sm-6">
+                                                                            <img class="img-fluid" src="assets/img/portfolio/cqeff6.gif" alt="..." />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+<img class="img-fluid" src="assets/img/portfolio/cqtitle1.gif" alt="..." />
+<img class="img-fluid" src="assets/img/portfolio/cqtitle2.gif" alt="..." />
+<img class="img-fluid" src="assets/img/portfolio/cqtitle3.gif" alt="..." />
+<br>
+                       <!-- 표동영상부분시작-->
+                          <div class="container">
+                               <div class="row">
+                                    <div class="videos-wrapper col-lg-6 ">
+                                            <div class="player-container col-lg-6" data-video-id="E7QOTA1pJhA">
+                                                <div class="player"></div>
+                                                <div class="end-screen">
+                                                    <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+                                                </div>
+                                           </div>
+                                    </div>
+                                    <div class="videos-wrapper col-lg-6 ">
+                                            <div class="player-container col-lg-6" data-video-id="AEPSLczdDRM">
+                                                <div class="player"></div>
+                                                <div class="end-screen">
+                                                    <button class="replay-button"><img src="assets/img/icon/replay.svg" width="100px" height="100px" alt="..." /></button>
+                                                </div>
+                                           </div>
+                                    </div>
+                               </div>
+                          </div>
+                       <!-- 표동영상부분끝-->
+
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 포폴디자인팝업-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Graphic design</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-le.png" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-sl.png" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-du.png" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-bl.png" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-si.png" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/design-bi.png" alt="..." />
+
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Window
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Photography
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
