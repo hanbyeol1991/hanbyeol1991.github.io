@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-<script>
-    window.addEventListener('DOMContentLoaded', event => {
-        const hash = window.location.hash;
-        if (hash && document.querySelector(hash)) {
-            const targetElement = document.querySelector(hash);
-            if (targetElement.classList.contains('modal')) {
-                const myModal = new bootstrap.Modal(targetElement);
-                myModal.show();
-            }
-        }
-    });
-</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P4QWDV03Q"></script>
 <script>
@@ -101,7 +90,18 @@ body {
         margin-top: 30px;
     }
 </style>
-
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+        const hash = window.location.hash;
+        if (hash && document.querySelector(hash)) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement.classList.contains('modal')) {
+                const myModal = new bootstrap.Modal(targetElement);
+                myModal.show();
+            }
+        }
+    });
+</script>
     </head>
     <body id="page-top">
 <!-- Google Tag Manager (noscript) -->
@@ -302,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Website 2025 v 1.0.1</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Website 2025 v 1.0.2</div>
                   <!-- 
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
