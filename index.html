@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+        const hash = window.location.hash;
+        if (hash && document.querySelector(hash)) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement.classList.contains('modal')) {
+                const myModal = new bootstrap.Modal(targetElement);
+                myModal.show();
+            }
+        }
+    });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P4QWDV03Q"></script>
 <script>
@@ -21,7 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Animator Hanbyeol portfolio</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
